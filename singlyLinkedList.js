@@ -24,6 +24,29 @@ class SinglyLinkedList {
         this.length += 1;
         return this;
     }
+    pop(){
+        if(!this.head){
+            return undefined
+        }
+    else{
+        var current = this.head;
+        var temp= current;
+        while(current.next){
+            temp = current;
+            current= current.next
+            }
+            this.tail= temp;
+        this.tail.next=null;
+        this.length--;
+
+        if(this.length===0){
+            this.head=null;
+            this.tail=null;
+        }
+        return this
+        }
+
+    }
 }
     list = new SinglyLinkedList()
 
@@ -31,6 +54,6 @@ class SinglyLinkedList {
 list.push("h")
 list.push("e")
 list.push("l")
-
+list.pop()
+list.pop()
 console.log(list)
-
